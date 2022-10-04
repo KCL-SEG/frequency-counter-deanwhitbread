@@ -4,14 +4,13 @@
 def frequencies(items):
     frequencies = {}
 
-    for items_char in items:
-        str(items_char)
-        for key in frequencies.items():
-            if frequencies.get(key) == items_char:
-                counter = frequencies.get(key)
-                counter = counter + 1
-                frequencies[key] = counter
-            else:
-                frequencies[items_char] = 0
+    for key in items:
+        key = str(key)
 
+        if frequencies.get(key) != None:
+            value = frequencies.get(key)
+            frequencies.update({key : value + 1})
+        else:
+            frequencies.update({key : 1})
+            
     return frequencies
